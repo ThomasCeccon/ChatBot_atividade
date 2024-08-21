@@ -3,15 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MF Solar!</title>
+    <link rel="icon" href="icone_h/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>MF Solar</title>  
 </head>
+
 <body>
-    <h1>Bem-vindo ao ChatBot da MF Solar!</h1>
-    <div id="chatbox">
-        <div id="messages"></div>
-        <input type="text" id="userInput" placeholder="Digite sua pergunta">
-        <button onclick="sendMessage()">Enviar</button>
+    <div id="container">
+        <img src="images/favicon-16x16.png" alt="HTML5" >
+        <div id="chatbot">
+            <div id="messages"></div>
+            <input type="text" id="userInput" placeholder="Digite sua pergunta">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
     </div>
-    
+    <div id="links">
+        <p><a href="#duvidas">Dúvidas</a> | <a href="#contato">Entre em Contato Conosco</a></p>
+    </div>
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('userInput').value;
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const messagesDiv = document.getElementById('messages');
+                messagesDiv.innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+                messagesDiv.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+                document.getElementById('userInput').value = '';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to bottom
+            });
+        }
+    </script>
 </body>
 </html>

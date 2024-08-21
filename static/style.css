@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 20px; /* Adiciona espaço ao fundo da página */
+}
+
+#container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Aumenta o efeito de sombra */
+    max-width: 600px;
+    width: 100%;
+    padding: 30px; /* Aumenta o padding dentro do container */
+    text-align: center;
+    margin-top: 40px; /* Aumenta o espaço acima do container */
+}
+
+#container img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px; /* Aumenta o espaço abaixo do título */
+}
+
+#chatbox {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px; /* Aumenta o padding dentro do chatbox */
+    margin-top: 30px; /* Aumenta o espaço acima do chatbox */
+    background-color: #f9f9f9;
+}
+
+#messages {
+    height: 250px; /* Aumenta a altura do chat */
+    overflow-y: auto;
+    margin-bottom: 20px; /* Aumenta o espaço abaixo da área de mensagens */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px; /* Aumenta o padding dentro da área de mensagens */
+    background-color: #fff;
+}
+
+input[type="text"] {
+    width: calc(100% - 110px); /* Ajusta o tamanho do campo de texto */
+    padding: 12px; /* Aumenta o padding interno do campo de texto */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 15px; /* Adiciona espaço abaixo do campo de texto */
+}
+
+button {
+    padding: 12px 25px; /* Aumenta o padding do botão */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px; /* Adiciona espaço acima do botão */
+    transition: background-color 0.3s; /* Adiciona transição suave na cor de fundo do botão */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px; /* Adiciona espaçamento entre os links */
+    transition: color 0.3s; /* Adiciona transição suave na cor do link */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Muda a cor do link ao passar o mouse */
+}
+
+#links {
+    margin-top: 30px; /* Aumenta o espaço acima dos links */
+    text-align: center;
+}
