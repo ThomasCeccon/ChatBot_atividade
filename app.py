@@ -39,7 +39,7 @@ def generate_response(user_input, user_id):
 
     elif state == 'coletando_nome':
         conversation_state[user_id] = 'uso'  # Atualiza o estado perguntando sobre o uso
-        return f"Prazer em conhecê-lo, {user_input}! Para começar, você está interessado em um sistema de energia solar para sua casa ou para sua empresa?\n\nDigite [1]Casa\n[2]Empresa"  # Responde com uma pergunta sobre o tipo de uso (residencial ou comercial).
+        return f"Prazer em conhecê-lo, {user_input}! Para começar, você está interessado em um sistema de energia solar para sua casa ou para sua empresa?\n\nDigite [1] Casa\n[2] Empresa"  # Responde com uma pergunta sobre o tipo de uso (residencial ou comercial).
 
     # Se o estado for perguntando sobre o uso
     elif state == 'uso':
