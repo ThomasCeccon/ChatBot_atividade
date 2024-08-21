@@ -14,18 +14,31 @@
         <div id="chatbot">
             <div id="messages"></div>
             <input type="text" id="userInput" placeholder="Digite sua pergunta">
-            <button onclick="sendMessage()">Enviar</button>
+            <button id="sendButton" onclick="sendMessage()">Enviar</button>
+            <p id="error" style="color: red; display: none;">Por favor, insira uma mensagem antes de enviar.</p>
         </div>
     </div>
     <div id="links">
         <p><a href="#duvidas">Dúvidas</a> | <a href="#contato">Entre em Contato Conosco</a></p>
     </div>
     <script>
-        // erar um identificador unico para o usuário
+        // Gerar um identificador único para o usuário
         const userId = Date.now();
 
         function sendMessage() {
-            const message = document.getElementById('userInput').value;
+            const message = document.getElementById('userInput').value.trim();
+            const sendButton = document.getElementById('sendButton');
+            const errorElement = document.getElementById('error');
+
+            if (message === "") {
+                errorElement.style.display = 'block';
+                sendButton.style.backgroundColor = 'red';
+                return;
+            } else {
+                errorElement.style.display = 'none';
+                sendButton.style.backgroundColor = '#007bff';
+            }
+
             fetch('/chat', {
                 method: 'POST',
                 headers: {

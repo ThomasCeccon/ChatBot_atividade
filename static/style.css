@@ -92,3 +92,8 @@ a:hover {
     margin-top: 30px; /* Aumenta o espaço acima dos links */
     text-align: center;
 }
+
+#error {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
