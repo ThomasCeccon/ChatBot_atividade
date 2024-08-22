@@ -11,6 +11,10 @@ conversation_state = {}
 def home():
     return render_template('index.html')# Define a rota para a pagina inicial
 
+@app.route('/duvidas')
+def duvidas():
+    return render_template('duvidas.html')
+
 @app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json.get('message')  # Obtem a mensagem enviada pelo usuario
