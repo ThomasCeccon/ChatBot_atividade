@@ -16,8 +16,8 @@ function sendMessage() {
     
     if (message.includes("obrigado")) {
         const messagesDiv = document.getElementById('messages');
-        messagesDiv.innerHTML += `<p class="user-message"><strong>Você:</strong> ${message}</p>`;
-        messagesDiv.innerHTML += `<p class="bot-message"><strong>Bot:</strong> De nada! Se precisar de mais alguma coisa, estarei aqui. Tenha um ótimo dia!</p>`;
+        messagesDiv.innerHTML += `<p class="user message"><strong>Você:</strong> ${message}</p>`;
+        messagesDiv.innerHTML += `<p class="bot message"><strong>Bot:</strong> De nada! Se precisar de mais alguma coisa, estarei aqui. Tenha um ótimo dia!</p>`;
         
         document.getElementById('userInput').disabled = true;
         sendButton.disabled = true;
