@@ -13,6 +13,19 @@ function sendMessage() {
         errorElement.style.display = 'none';
         sendButton.style.backgroundColor = '#007bff';
     }
+    
+    if (message.includes("obrigado")) {
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.innerHTML += `<p class="user-message"><strong>Você:</strong> ${message}</p>`;
+        messagesDiv.innerHTML += `<p class="bot-message"><strong>Bot:</strong> De nada! Se precisar de mais alguma coisa, estarei aqui. Tenha um ótimo dia!</p>`;
+        
+        document.getElementById('userInput').disabled = true;
+        sendButton.disabled = true;
+        sendButton.style.backgroundColor = '#ccc';
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+        return;
+    }
 
     fetch('/chat', {
         method: 'POST',
